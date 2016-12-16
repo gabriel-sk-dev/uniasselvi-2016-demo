@@ -39,19 +39,7 @@ namespace ExemploSistema
                     var employee = new Employee();
                     employee.Id = dataReaded.GetInt32(0);
                     employee.Name = dataReaded.GetString(1);
-                    var civilState = dataReaded.GetString(2);
-                    switch (civilState)
-                    {
-                        case "C":
-                            employee.CivilState = "Casado";
-                            break;
-                        case "S":
-                            employee.CivilState = "Solteiro";
-                            break;
-                        default:
-                            employee.CivilState = "N/A";
-                            break;
-                    }
+                    employee.CivilState = dataReaded.GetString(2);
                     employee.Salary = dataReaded.GetDecimal(3);
                     listOfEmployess.Add(employee);
                 }
@@ -159,20 +147,8 @@ namespace ExemploSistema
             {
                 var nameParam = new SqlParameter("@Name", _selectedEmployee.Name);
                 command.Parameters.Add(nameParam);
-
-                var civilState = "";
-                switch (_selectedEmployee.CivilState)
-                {
-                    case "Casado":
-                        civilState = "C";
-                        break;
-                    case "Solteiro":
-                        civilState = "S";
-                        break;
-                    default:
-                        break;
-                }
-                var civilStateParam = new SqlParameter("@CivilState", civilState);
+                
+                var civilStateParam = new SqlParameter("@CivilState", _selectedEmployee.CivilState);
                 command.Parameters.Add(civilStateParam);
 
                 var salarayParam = new SqlParameter("@Salary", _selectedEmployee.Salary);
@@ -199,19 +175,7 @@ namespace ExemploSistema
                     var employee = new Employee();
                     employee.Id = dataReaded.GetInt32(0);
                     employee.Name = dataReaded.GetString(1);
-                    var civilState = dataReaded.GetString(2);
-                    switch (civilState)
-                    {
-                        case "C":
-                            employee.CivilState = "Casado";
-                            break;
-                        case "S":
-                            employee.CivilState = "Solteiro";
-                            break;
-                        default:
-                            employee.CivilState = "N/A";
-                            break;
-                    }
+                    employee.CivilState = dataReaded.GetString(2);
                     employee.Salary = dataReaded.GetDecimal(3);
                     listOfEmployess.Add(employee);
                 }
