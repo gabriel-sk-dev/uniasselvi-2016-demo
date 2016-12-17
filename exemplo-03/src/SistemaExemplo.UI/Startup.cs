@@ -23,8 +23,7 @@ namespace SistemaExemplo.UI
             {
                 app.UseDeveloperExceptionPage();
             }
-            
-            
+            app.UseFileServer();
         }
     }
 }

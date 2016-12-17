@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="lib/angular-material/angular-material.css" rel="stylesheet" />
+</head>
+<body>
+    <md-nav-bar>        
+        <md-nav-item md-nav-href="index.html#/home" name="home">HOME</md-nav-item>        
+    </md-nav-bar>
+
+
+    <section id="content" layout="column" layout-padding md-scroll-y>
+        <section id="main">
+            <div class="container">
+
+                <div ui-view></div>
+
+            </div>
+        </section>
+    </section>
+
+
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-material/angular-material.js"></script>
+    <script src="lib/angular-material-icons/angular-material-icons.js"></script>    
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-aria/angular-aria.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.constantes.js"></script>
+    <script src="app/app.home.controller.js"></script>
+
+</body>
+</html>
